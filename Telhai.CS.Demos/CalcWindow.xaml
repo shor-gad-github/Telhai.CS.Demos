@@ -1,0 +1,23 @@
+﻿<Window x:Class="Telhai.CS.Demos.CalcWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telhai.CS.Demos"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="CalcWindow" Height="450" Width="800" ResizeMode="NoResize" Background="LightBlue">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="lstBoxExpressions" Grid.Row="1" />
+        <StackPanel   Background="LightBlue" Margin="10,0,0,0" VerticalAlignment="center" HorizontalAlignment="Stretch" Orientation="Horizontal" Name="stkpnl"  >
+            <TextBox HorizontalAlignment="Stretch"  Width="250" FontSize="30" Name="txt1" TextWrapping="Wrap"   Text="" />
+            <ComboBox Margin="20,0,20,0" VerticalAlignment="center"  FontSize="15" Width="140"  Name="comboBoxOperator" />
+            <TextBox Width="250"  FontSize="30" Name="txt2" TextWrapping="Wrap"  Text="" />
+            <Button   Width="60" Margin="10,0,0,0"  Background="WhiteSmoke" Name="btnRes" Content="="  HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Click="btnRes_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
