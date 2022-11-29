@@ -39,10 +39,10 @@ namespace Telhai.CS.Demos
             Student s2 = new Student { Name = "David", Age = 25 };
             repo.AddStudent(s2);
 
+            this.listBoxStudents.ItemsSource = repo.Students;
 
-            this.listBoxStudents.Items.Clear();
             //this.listBoxStudents.Items.Add(s1);
-          //  this.listBoxStudents.Items.Add(s2);
+            //  this.listBoxStudents.Items.Add(s2);
 
 
         }
