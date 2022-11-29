@@ -26,9 +26,25 @@ namespace Telhai.CS.Demos
         {
             InitializeComponent();
             repo = new StudentsRepository();
+          
+
+
         }
 
- 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Student s1 = new Student { Name = "Moshe", Age = 25 };
+            repo.AddStudent(s1);
 
+            Student s2 = new Student { Name = "David", Age = 25 };
+            repo.AddStudent(s2);
+
+
+            this.listBoxStudents.Items.Clear();
+            //this.listBoxStudents.Items.Add(s1);
+          //  this.listBoxStudents.Items.Add(s2);
+
+
+        }
     }
 }
