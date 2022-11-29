@@ -14,7 +14,7 @@ namespace Telhai.CS.Demos.Models
         public int Age { get; set; }
 
 
-        public Student()
+        public Student():this("",-1)
         {
         }
 
