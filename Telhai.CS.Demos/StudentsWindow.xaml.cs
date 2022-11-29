@@ -45,7 +45,8 @@ namespace Telhai.CS.Demos
             repo.AddStudent(s3);
 
             //-Get Current Data from student repo
-            //ach List item is object of student
+            //-each List item is object of student
+            //-each list item will display the toString of the bounded object (ToString of Student)
             this.listBoxStudents.ItemsSource = repo.Students;
 
 
