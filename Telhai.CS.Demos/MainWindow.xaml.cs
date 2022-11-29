@@ -49,7 +49,9 @@ namespace Telhai.CS.Demos
 
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
-           //Open New Students Window
+
+            StudentsWindow s = new StudentsWindow();
+            s.Show();
         }
 
         private void listElem_SelectionChanged(object sender, SelectionChangedEventArgs e)

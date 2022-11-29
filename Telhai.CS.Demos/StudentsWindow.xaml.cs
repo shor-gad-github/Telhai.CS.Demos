@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Telhai.CS.Demos.Models;
 
 namespace Telhai.CS.Demos
 {
@@ -19,9 +20,15 @@ namespace Telhai.CS.Demos
     /// </summary>
     public partial class StudentsWindow : Window
     {
+        StudentsRepository repo;
+
         public StudentsWindow()
         {
             InitializeComponent();
+            repo = new StudentsRepository();
         }
+
+ 
+
     }
 }
