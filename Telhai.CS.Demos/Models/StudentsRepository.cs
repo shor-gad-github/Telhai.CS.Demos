@@ -26,12 +26,22 @@ namespace Telhai.CS.Demos.Models
 
         public void UpdateStudent(Student student)
         {
-           int indexFound =  this._students.FindIndex(s => s.Id == student.Id);
+            int indexFound =  this._students.FindIndex(s => s.Id == student.Id);
+            if (indexFound >= 0)
+            {
+                this._students[indexFound] = student;
+            }
+
+
         }
 
         public void RemoveStudent(string id)
         {
-
+            int indexFound = this._students.FindIndex(s => s.Id == id);
+            if (indexFound >= 0)
+            {
+                this._students.RemoveAt(indexFound);
+            }
         }
 
     }
