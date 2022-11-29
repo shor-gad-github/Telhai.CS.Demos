@@ -161,5 +161,10 @@ namespace Telhai.CS.Demos
 
 
         }
+
+        private void lstBoxExpressions_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

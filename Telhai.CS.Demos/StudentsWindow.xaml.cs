@@ -26,25 +26,40 @@ namespace Telhai.CS.Demos
         {
             InitializeComponent();
             repo = new StudentsRepository();
-          
+
 
 
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //-Initializer
             Student s1 = new Student { Name = "Moshe", Age = 25 };
             repo.AddStudent(s1);
-
-            Student s2 = new Student { Name = "David", Age = 25 };
+            //-Initializer
+            Student s2 = new Student { Name = "David", Age = 21 };
             repo.AddStudent(s2);
 
+            //-Constractor
+            Student s3 = new Student(name: "Yossi", age: 27);
+            repo.AddStudent(s3);
+
+            //-Get Current Data from student repo
+            //ach List item is object of student
             this.listBoxStudents.ItemsSource = repo.Students;
 
-            //this.listBoxStudents.Items.Add(s1);
-            //  this.listBoxStudents.Items.Add(s2);
 
 
+        }
+
+        private void listBoxStudents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (this.listBoxStudents.SelectedItem is Student s)
+            {
+                this.txtId.Text = s.Id;
+                this.txtName.Text = s.Name;
+                this.txtAge.Text = s.Age.ToString();
+            }
         }
     }
 }

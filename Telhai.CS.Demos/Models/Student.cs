@@ -15,7 +15,7 @@ namespace Telhai.CS.Demos.Models
 
         public override string ToString()
         {
-            return this.Id + "-" + this.Name;
+            return  this.Name ;
         }
 
 

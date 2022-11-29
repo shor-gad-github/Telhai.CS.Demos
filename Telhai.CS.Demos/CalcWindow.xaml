@@ -11,7 +11,7 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <ListBox Name="lstBoxExpressions" Grid.Row="1" />
+        <ListBox  Name="lstBoxExpressions" Grid.Row="1" />
         <StackPanel   Background="LightBlue" Margin="10,0,0,0" VerticalAlignment="center" HorizontalAlignment="Stretch" Orientation="Horizontal" Name="stkpnl"  >
             <TextBox HorizontalAlignment="Stretch"  Width="250" FontSize="30" Name="txt1" TextWrapping="Wrap"   Text="" />
             <ComboBox Margin="20,0,20,0" VerticalAlignment="center"  FontSize="15" Width="140"  Name="comboBoxOperator" />
