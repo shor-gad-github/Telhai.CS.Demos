@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
@@ -55,8 +56,22 @@ namespace Telhai.CS.Demos
 
         private void btnDesirialize_Click(object sender, RoutedEventArgs e)
         {
+
             WeatherForecast? ObjectCreated =
             JsonSerializer.Deserialize<WeatherForecast>(this.txtJson.Text);
+
+
+  
+            //Do Some Operation on OBject after desirialized, Just for Demo
+            int avg = 0;
+            int count = 0;
+            foreach (var item in ObjectCreated.TemperatureRanges)
+            {
+                avg += item.Value.Low;
+                avg += item.Value.High;
+                count += 2;
+            }
+            MessageBox.Show($"AVG:{avg / count}");
         }
     }
 }
