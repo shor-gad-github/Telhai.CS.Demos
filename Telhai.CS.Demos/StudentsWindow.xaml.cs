@@ -67,8 +67,28 @@ namespace Telhai.CS.Demos
             Student s = new Student { Name = "NoName_" + iNoName};
             this.repo.AddStudent(s);
             iNoName++;
-           // this.listBoxStudents.Items.Clear();
+         
             this.listBoxStudents.ItemsSource = this.repo.Students;
+            SetSelectedByIndex(this.listBoxStudents.Items.Count-1);
+        
         }
+
+        private void SetSelectedById(string id)
+        {
+
+        }
+
+        private void SetSelectedByIndex(int index)
+        {
+            if (index>=0 && index < this.listBoxStudents.Items.Count)
+            {
+                this.listBoxStudents.SelectedIndex = index;
+            }
+        }
+
+
+
+
+
     }
 }
