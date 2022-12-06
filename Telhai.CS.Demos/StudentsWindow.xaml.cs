@@ -112,13 +112,18 @@ namespace Telhai.CS.Demos
             if (this.listBoxStudents.SelectedItem is Student s)
             {
                 s.Name = txtName.Text;
-               int convertedAge;
+                int convertedAge;
                 bool isOk = int.TryParse(txtAge.Text, out convertedAge);
-               if (isOk)
+                if (isOk)
+                {
                     s.Age = convertedAge;
-               
-                repo.UpdateStudent();
+                }
+                s.Id = this.txtId.Text;
 
+                this.repo.UpdateStudent(s);
+                this.listBoxStudents.ItemsSource = repo.Students;
+                this.SetSelectedById(s.Id);
             }
+        }
     }
 }
