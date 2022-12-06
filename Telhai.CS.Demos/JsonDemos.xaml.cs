@@ -52,5 +52,11 @@ namespace Telhai.CS.Demos
             File.WriteAllText("weather.json", jsonString);
 
         }
+
+        private void btnDesirialize_Click(object sender, RoutedEventArgs e)
+        {
+            WeatherForecast? ObjectCreated =
+            JsonSerializer.Deserialize<WeatherForecast>(this.txtJson.Text);
+        }
     }
 }
