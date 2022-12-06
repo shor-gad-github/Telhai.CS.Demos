@@ -96,9 +96,15 @@ namespace Telhai.CS.Demos
             }
         }
 
-
-
-
-
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.listBoxStudents.SelectedItem is Student s )
+            {
+                repo.RemoveStudent(s.Id);
+            }
+                
+            this.listBoxStudents.ItemsSource = repo.Students;
+            SetSelectedByIndex(0);
+        }
     }
 }
