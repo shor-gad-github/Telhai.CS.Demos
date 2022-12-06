@@ -11,7 +11,10 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <ListBox SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
+        <StackPanel VerticalAlignment="Stretch"  >
+          <Button Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
+          <ListBox Margin="0"   VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
+        </StackPanel>
         <Grid Grid.Column="1" Grid.Row="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>

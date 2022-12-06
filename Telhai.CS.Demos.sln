@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33015.44
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telhai.CS.Demos", "Telhai.CS.Demos\Telhai.CS.Demos.csproj", "{884EA776-1389-4E1E-A7D1-ECB0ADF2C3F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telhai.CS.Demos", "Telhai.CS.Demos\Telhai.CS.Demos.csproj", "{884EA776-1389-4E1E-A7D1-ECB0ADF2C3F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telhai.CS.Logging", "Telhai.CS.Logger\Telhai.CS.Logging.csproj", "{847B0CD5-B05B-4B80-A0DF-6C9650198F83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Telhai.CS.Logging", "Telhai.CS.Logger\Telhai.CS.Logging.csproj", "{847B0CD5-B05B-4B80-A0DF-6C9650198F83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

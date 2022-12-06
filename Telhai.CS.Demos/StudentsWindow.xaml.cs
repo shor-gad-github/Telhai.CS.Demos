@@ -26,15 +26,12 @@ namespace Telhai.CS.Demos
         {
             InitializeComponent();
             repo = new StudentsRepository();
-
-
-
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //-Initializer
-            Student s1 = new Student { Name = "Moshe", Age = 25 };
+            Student s1 = new Student { Name = "Moshe", Age = 15 };
             repo.AddStudent(s1);
             //-Initializer
             Student s2 = new Student { Name = "David", Age = 21 };
@@ -61,6 +58,17 @@ namespace Telhai.CS.Demos
                 this.txtName.Text = s.Name;
                 this.txtAge.Text = s.Age.ToString();
             }
+        }
+
+
+        int iNoName = 1;
+        private void BtnAddStudent_Click(object sender, RoutedEventArgs e)
+        {
+            Student s = new Student { Name = "NoName_" + iNoName};
+            this.repo.AddStudent(s);
+            iNoName++;
+           // this.listBoxStudents.Items.Clear();
+            this.listBoxStudents.ItemsSource = this.repo.Students;
         }
     }
 }
