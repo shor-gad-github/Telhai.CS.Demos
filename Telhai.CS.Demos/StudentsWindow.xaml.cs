@@ -78,7 +78,7 @@ namespace Telhai.CS.Demos
             for (int i = 0; i < this.listBoxStudents.Items.Count; i++)
             {
 
-                Student s = listBoxStudents.Items[i] as Student;
+                Student? s = listBoxStudents.Items[i] as Student;
                 if (s!=null)
                 {
                     if (s.Id==id)
