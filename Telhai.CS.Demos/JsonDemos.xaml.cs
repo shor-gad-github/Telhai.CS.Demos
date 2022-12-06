@@ -61,10 +61,15 @@ namespace Telhai.CS.Demos
             JsonSerializer.Deserialize<WeatherForecast>(this.txtJson.Text);
 
 
-  
+           if (string.IsNullOrEmpty(this.txtJson.Text))
+            {
+                MessageBox.Show("Input Json is Not Presented");
+                return;
+            }
             //Do Some Operation on OBject after desirialized, Just for Demo
             int avg = 0;
             int count = 0;
+            
             foreach (var item in ObjectCreated.TemperatureRanges)
             {
                 avg += item.Value.Low;
