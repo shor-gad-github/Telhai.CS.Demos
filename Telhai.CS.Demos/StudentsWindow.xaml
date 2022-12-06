@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
 
             <Label FontSize="15" Margin="10" Grid.Row="1" Grid.Column="0"  Name="lblId" Content="Id:"  />
-            <TextBox Margin="10"  Background="LightGray" Name="txtId" Grid.Row="1" Grid.Column="1"   />
+            <TextBox Margin="10" IsReadOnly="true"  Background="LightGray" Name="txtId" Grid.Row="1" Grid.Column="1"   />
 
             <Label FontSize="15" Margin="10" Grid.Row="2" Grid.Column="0"  Name="lblName" Content="Name:"  />
             <TextBox Margin="10"  Background="LightGray" Name="txtName" Grid.Row="2" Grid.Column="1"   />
