@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -59,24 +60,28 @@ namespace Telhai.CS.Demos
 
             WeatherForecast? ObjectCreated =
             JsonSerializer.Deserialize<WeatherForecast>(this.txtJson.Text);
-
+            
+          
 
            if (string.IsNullOrEmpty(this.txtJson.Text))
             {
                 MessageBox.Show("Input Json is Not Presented");
                 return;
             }
-            //Do Some Operation on OBject after desirialized, Just for Demo
-            int avg = 0;
-            int count = 0;
-            
-            foreach (var item in ObjectCreated.TemperatureRanges)
+            //--Do Some Operation on OBject after desirialized, Just for Dem
+            if (ObjectCreated!=null && ObjectCreated.TemperatureRanges != null)
             {
-                avg += item.Value.Low;
-                avg += item.Value.High;
-                count += 2;
+                int avg = 0;
+                int count = 0;
+
+                foreach (var item in ObjectCreated.TemperatureRanges)
+                {
+                    avg += item.Value.Low;
+                    avg += item.Value.High;
+                    count += 2;
+                }
+                MessageBox.Show($"AVG:{avg / count}");
             }
-            MessageBox.Show($"AVG:{avg / count}");
         }
     }
 }
