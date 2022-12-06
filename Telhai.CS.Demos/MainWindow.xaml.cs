@@ -71,6 +71,11 @@ namespace Telhai.CS.Demos
             
         }
 
-  
+        private void btn3_Click(object sender, RoutedEventArgs e)
+        {
+            JsonDemos d = new JsonDemos();
+          //  this.AddChild(d);
+            d.Show();
+        }
     }
 }
