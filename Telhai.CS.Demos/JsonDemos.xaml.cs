@@ -23,5 +23,10 @@ namespace Telhai.CS.Demos
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

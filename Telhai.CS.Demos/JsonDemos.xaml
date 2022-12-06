@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="JsonDemos" Height="450" Width="800">
     <Canvas>
-        <Button Content="Serialize" Canvas.Left="49" Canvas.Top="82" Height="51" Width="111"/>
+        <Button Content="Serialize" Canvas.Left="49" Canvas.Top="82" Height="51" Width="111" Click="Button_Click"/>
         <TextBox  MaxLines="20" Canvas.Left="250" TextWrapping="Wrap" Text="TextBox" Canvas.Top="82" Width="443" Height="305"/>
         <Button Content="Deserialize" Canvas.Left="49" Canvas.Top="166" Height="51" Width="111" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
