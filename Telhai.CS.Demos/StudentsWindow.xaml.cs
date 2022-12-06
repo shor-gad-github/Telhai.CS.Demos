@@ -106,5 +106,19 @@ namespace Telhai.CS.Demos
             this.listBoxStudents.ItemsSource = repo.Students;
             SetSelectedByIndex(0);
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.listBoxStudents.SelectedItem is Student s)
+            {
+                s.Name = txtName.Text;
+               int convertedAge;
+                bool isOk = int.TryParse(txtAge.Text, out convertedAge);
+               if (isOk)
+                    s.Age = convertedAge;
+               
+                repo.UpdateStudent();
+
+            }
     }
 }
