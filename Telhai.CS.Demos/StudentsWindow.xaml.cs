@@ -69,13 +69,23 @@ namespace Telhai.CS.Demos
             iNoName++;
          
             this.listBoxStudents.ItemsSource = this.repo.Students;
-            SetSelectedByIndex(this.listBoxStudents.Items.Count-1);
-        
+            //SetSelectedByIndex(this.listBoxStudents.Items.Count-1);
+            SetSelectedById(s.Id);
         }
 
         private void SetSelectedById(string id)
         {
+            for (int i = 0; i < this.listBoxStudents.Items.Count; i++)
+            {
 
+                Student s = listBoxStudents.Items[i] as Student;
+                if (s!=null)
+                {
+                    if (s.Id==id)
+                        this.listBoxStudents.SelectedItem = s;
+                }
+            
+            }
         }
 
         private void SetSelectedByIndex(int index)
