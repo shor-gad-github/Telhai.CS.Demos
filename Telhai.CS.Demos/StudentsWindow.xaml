@@ -21,6 +21,7 @@
             <StackPanel   Grid.Row="0" Orientation="Horizontal">
                   <TextBox HorizontalAlignment="Left" Width="200" Name="PathLoader"   />
                   <Button Name="btnBrowse" Content="..." HorizontalAlignment="Right" Click="btnBrowse_Click"></Button>
+                <Button Name="btnLoadData" Content="Load" Click="btnLoadData_Click"></Button>
             </StackPanel  >
             <Button  Grid.Row="1"  Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
             <Button Name="btnSaveAll"  Content="Save All"   Grid.Row="2" Click="btnSaveAll_Click"  ></Button>

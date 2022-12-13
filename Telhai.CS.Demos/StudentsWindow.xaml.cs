@@ -160,8 +160,16 @@ namespace Telhai.CS.Demos
         {
             if (this.PathLoader.Text != string.Empty)
             {
-                List<Student>? ObjectCreated =
+                List<Student>? studentsList =
                 JsonSerializer.Deserialize<List<Student>>(this.PathLoader.Text);
+                foreach (Student item in studentsList)
+                {
+                    repo.AddStudent(item);
+                }
+                this.listBoxStudents.ItemsSource = repo.Students;
+
+
+
             }
         }
     }
