@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Telhai.CS.Demos.Models;
 using Telhai.CS.Logging;
 
 namespace Telhai.CS.Demos
@@ -50,7 +51,7 @@ namespace Telhai.CS.Demos
         private void btn2_Click(object sender, RoutedEventArgs e)
         {
 
-            StudentsWindow s = new StudentsWindow();
+            StudentsWindow s = new StudentsWindow(new StudentsRepository());
             s.Show();
         }
 

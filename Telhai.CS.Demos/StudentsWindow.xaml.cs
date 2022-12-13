@@ -23,12 +23,12 @@ namespace Telhai.CS.Demos
     /// </summary>
     public partial class StudentsWindow : Window
     {
-        StudentsRepository repo;
+        IStudentsRepository repo;
 
-        public StudentsWindow()
+        public StudentsWindow(IStudentsRepository repo)
         {
             InitializeComponent();
-            repo = new StudentsRepository();
+            this.repo = repo;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -160,12 +160,19 @@ namespace Telhai.CS.Demos
         {
             if (this.PathLoader.Text != string.Empty)
             {
-                List<Student>? studentsList =
-                JsonSerializer.Deserialize<List<Student>>(this.PathLoader.Text);
+                //1) Load Student from Text As Object
+                //From User Selected File
+                //
+                string studentsText = File.ReadAllText(this.PathLoader.Text);
+                var studentsList =
+                JsonSerializer.Deserialize<Student[]>(studentsText);
+                //2)Add Objects to Repo Manager
+        
                 foreach (Student item in studentsList)
                 {
                     repo.AddStudent(item);
                 }
+                //3)Sync GUI LIST
                 this.listBoxStudents.ItemsSource = repo.Students;
 
 

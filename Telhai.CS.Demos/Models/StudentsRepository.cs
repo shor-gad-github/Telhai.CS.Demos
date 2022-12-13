@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Telhai.CS.Demos.Models
 {
-    public class StudentsRepository
+    public class StudentsRepository : IStudentsRepository
     {
         private List<Student> _students;
         public StudentsRepository()

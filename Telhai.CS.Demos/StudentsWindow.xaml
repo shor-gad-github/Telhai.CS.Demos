@@ -18,11 +18,11 @@
                 <RowDefinition Height="auto"  />
                 <RowDefinition Height="*"  />
             </Grid.RowDefinitions>
-            <StackPanel   Grid.Row="0" Orientation="Horizontal">
-                  <TextBox HorizontalAlignment="Left" Width="200" Name="PathLoader"   />
-                  <Button Name="btnBrowse" Content="..." HorizontalAlignment="Right" Click="btnBrowse_Click"></Button>
-                <Button Name="btnLoadData" Content="Load" Click="btnLoadData_Click"></Button>
-            </StackPanel  >
+            <DockPanel HorizontalAlignment="Stretch" Grid.Row="0">
+                <Button  DockPanel.Dock="Right" Name="btnLoadData" Width="80" Content="Load" Click="btnLoadData_Click"></Button>
+                <Button  DockPanel.Dock="Right" Name="btnBrowse" Content="..."  Click="btnBrowse_Click"></Button>
+                <TextBox  HorizontalAlignment="Stretch"  DockPanel.Dock="Left"  Name="PathLoader"   />
+            </DockPanel  >
             <Button  Grid.Row="1"  Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
             <Button Name="btnSaveAll"  Content="Save All"   Grid.Row="2" Click="btnSaveAll_Click"  ></Button>
             <ListBox Background="WhiteSmoke" Grid.Row="3"  Margin="0"    VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
