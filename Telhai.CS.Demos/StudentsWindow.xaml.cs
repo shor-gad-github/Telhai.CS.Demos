@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -33,22 +34,20 @@ namespace Telhai.CS.Demos
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //-Initializer
-            Student s1 = new Student { Name = "Moshe", Age = 15 };
-            repo.AddStudent(s1);
-            //-Initializer
-            Student s2 = new Student { Name = "David", Age = 21 };
-            repo.AddStudent(s2);
+            //Student s1 = new Student { Name = "Moshe", Age = 15 };
+            //repo.AddStudent(s1);
+            ////-Initializer
+            //Student s2 = new Student { Name = "David", Age = 21 };
+            //repo.AddStudent(s2);
 
-            //-Constractor
-            Student s3 = new Student(name: "Yossi", age: 27);
-            repo.AddStudent(s3);
+            ////-Constractor
+            //Student s3 = new Student(name: "Yossi", age: 27);
+            //repo.AddStudent(s3);
 
-            //-Get Current Data from student repo
-            //-each List item is object of student
-            //-each list item will display the toString of the bounded object (ToString of Student)
-            this.listBoxStudents.ItemsSource = repo.Students;
-
-
+            ////-Get Current Data from student repo
+            ////-each List item is object of student
+            ////-each list item will display the toString of the bounded object (ToString of Student)
+            //this.listBoxStudents.ItemsSource = repo.Students;
 
         }
 
@@ -136,11 +135,34 @@ namespace Telhai.CS.Demos
             string jsonStudentsString = JsonSerializer.Serialize<List<Student>>(students, options);
 
             if (!Directory.Exists("AppData"))
-            {
+            { 
                 Directory.CreateDirectory("AppData");
             }  
            
             File.WriteAllText("AppData/students.json", jsonStudentsString);
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                string jsonPath =   openFileDialog.FileName;
+                this.PathLoader.Text = jsonPath;
+
+
+
+            }
+                   
+        }
+
+        private void btnLoadData_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.PathLoader.Text != string.Empty)
+            {
+                List<Student>? ObjectCreated =
+                JsonSerializer.Deserialize<List<Student>>(this.PathLoader.Text);
+            }
         }
     }
 }

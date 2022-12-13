@@ -13,13 +13,18 @@
         </Grid.ColumnDefinitions>
         <Grid Name="InnerGrid" >
             <Grid.RowDefinitions>
-              <RowDefinition Height="auto"  />
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="auto"  />
                 <RowDefinition Height="auto"  />
                 <RowDefinition Height="*"  />
             </Grid.RowDefinitions>
-            <Button Grid.Row="0"  Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
-            <Button Name="btnSaveAll"  Content="Save All"   Grid.Row="1" Click="btnSaveAll_Click"  ></Button>
-            <ListBox Background="WhiteSmoke" Grid.Row="2"  Margin="0"    VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
+            <StackPanel   Grid.Row="0" Orientation="Horizontal">
+                  <TextBox HorizontalAlignment="Left" Width="200" Name="PathLoader"   />
+                  <Button Name="btnBrowse" Content="..." HorizontalAlignment="Right" Click="btnBrowse_Click"></Button>
+            </StackPanel  >
+            <Button  Grid.Row="1"  Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
+            <Button Name="btnSaveAll"  Content="Save All"   Grid.Row="2" Click="btnSaveAll_Click"  ></Button>
+            <ListBox Background="WhiteSmoke" Grid.Row="3"  Margin="0"    VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
         </Grid>
         <Grid Grid.Column="1" Grid.Row="0" >
             <Grid.ColumnDefinitions>
