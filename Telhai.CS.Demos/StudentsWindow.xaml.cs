@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -124,6 +126,21 @@ namespace Telhai.CS.Demos
                 this.listBoxStudents.ItemsSource = repo.Students;
                 this.SetSelectedById(s.Id);
             }
+        }
+
+        private void btnSaveAll_Click(object sender, RoutedEventArgs e)
+        {
+            List<Student> students = repo.Students.ToList(); ;
+
+            var options = new JsonSerializerOptions { WriteIndented = true };
+            string jsonStudentsString = JsonSerializer.Serialize<List<Student>>(students, options);
+
+            if (!Directory.Exists("AppData"))
+            {
+                Directory.CreateDirectory("AppData");
+            }  
+           
+            File.WriteAllText("AppData/students.json", jsonStudentsString);
         }
     }
 }

@@ -8,13 +8,19 @@
         Title="StudentsWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"  />
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel VerticalAlignment="Stretch"  >
-          <Button Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
-          <ListBox Margin="0"   VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
-        </StackPanel>
+        <Grid Name="InnerGrid" >
+            <Grid.RowDefinitions>
+              <RowDefinition Height="auto"  />
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="*"  />
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0"  Name="BtnAddStudent" Content="Add Student" Click="BtnAddStudent_Click"></Button>
+            <Button Name="btnSaveAll"  Content="Save All"   Grid.Row="1" Click="btnSaveAll_Click"  ></Button>
+            <ListBox Background="WhiteSmoke" Grid.Row="2"  Margin="0"    VerticalAlignment="Stretch" SelectionChanged="listBoxStudents_SelectionChanged" Name="listBoxStudents" />
+        </Grid>
         <Grid Grid.Column="1" Grid.Row="0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
@@ -39,6 +45,7 @@
             <StackPanel  Orientation="Horizontal" Grid.Column="1" Grid.Row="4"  Margin="0,30,0,0">
               <Button FontSize="15" HorizontalAlignment="Right" Margin="10" Height="30" Content="Update" Width="100" Name="btnSave" Grid.Column="1" Grid.Row="4" Click="btnSave_Click"  />
               <Button FontSize="15" HorizontalAlignment="Right" Margin="10" Height="30" Content="Delete" Width="100" Name="btnRemove" Click="btnRemove_Click"  />
+              
             </StackPanel>
         </Grid>
             

@@ -6,10 +6,11 @@
         xmlns:local="clr-namespace:Telhai.CS.Demos"
         mc:Ignorable="d"
         Title="JsonDemos" Height="450" Width="800">
-    <Canvas>
+    <Canvas Margin="0,-1,0,1">
         <Button Content="Serialize" Canvas.Left="134" Canvas.Top="82" Height="51" Width="111" Click="Button_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         <TextBox Name="txtJson" VerticalScrollBarVisibility="Visible"  Canvas.Left="250" TextWrapping="Wrap" Text="" Canvas.Top="82" Width="443" Height="305"/>
         <Button Name="btnDesirialize" Content="Deserialize" Canvas.Left="134" Canvas.Top="140" Height="51" Width="111" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnDesirialize_Click"/>
+
 
     </Canvas>
 </Window>

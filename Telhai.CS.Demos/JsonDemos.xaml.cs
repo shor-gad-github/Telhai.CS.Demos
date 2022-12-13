@@ -57,17 +57,18 @@ namespace Telhai.CS.Demos
 
         private void btnDesirialize_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrEmpty(this.txtJson.Text))
+            {
+                MessageBox.Show("Input Json is Not Presented");
+                return;
+            }
 
             WeatherForecast? ObjectCreated =
             JsonSerializer.Deserialize<WeatherForecast>(this.txtJson.Text);
             
           
 
-           if (string.IsNullOrEmpty(this.txtJson.Text))
-            {
-                MessageBox.Show("Input Json is Not Presented");
-                return;
-            }
+        
             //--Do Some Operation on OBject after desirialized, Just for Dem
             if (ObjectCreated!=null && ObjectCreated.TemperatureRanges != null)
             {
@@ -82,6 +83,11 @@ namespace Telhai.CS.Demos
                 }
                 MessageBox.Show($"AVG:{avg / count}");
             }
+        }
+
+        private void movies_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

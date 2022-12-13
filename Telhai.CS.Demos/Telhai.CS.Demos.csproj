@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Telhai.CS.Logger\Telhai.CS.Logging.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\" />
+  </ItemGroup>
+
 </Project>
