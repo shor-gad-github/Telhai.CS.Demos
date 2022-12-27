@@ -77,5 +77,11 @@ namespace Telhai.CS.Demos
             JsonDemos d = new JsonDemos();
             d.Show();
         }
+
+        private void Linq_Click(object sender, RoutedEventArgs e)
+        {
+           LinqDemosWindow linqDemosWindow = new LinqDemosWindow();
+            linqDemosWindow.ShowDialog();
+        }
     }
 }
