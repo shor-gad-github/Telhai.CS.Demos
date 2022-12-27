@@ -33,21 +33,9 @@ namespace Telhai.CS.Demos
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //-Initializer
-            //Student s1 = new Student { Name = "Moshe", Age = 15 };
-            //repo.AddStudent(s1);
-            ////-Initializer
-            //Student s2 = new Student { Name = "David", Age = 21 };
-            //repo.AddStudent(s2);
 
-            ////-Constractor
-            //Student s3 = new Student(name: "Yossi", age: 27);
-            //repo.AddStudent(s3);
-
-            ////-Get Current Data from student repo
-            ////-each List item is object of student
-            ////-each list item will display the toString of the bounded object (ToString of Student)
-            //this.listBoxStudents.ItemsSource = repo.Students;
+            this.listBoxStudents.ItemsSource = repo.Students;
+         
 
         }
 
