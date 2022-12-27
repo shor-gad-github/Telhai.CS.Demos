@@ -80,7 +80,7 @@ namespace Telhai.CS.Demos
 
         private void Linq_Click(object sender, RoutedEventArgs e)
         {
-           LinqDemosWindow linqDemosWindow = new LinqDemosWindow();
+            LinqDemosWindow linqDemosWindow = new LinqDemosWindow();
             linqDemosWindow.ShowDialog();
         }
     }
