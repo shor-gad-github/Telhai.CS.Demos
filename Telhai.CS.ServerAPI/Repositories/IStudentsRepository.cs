@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Telhai.CS.ServerAPI.Models;
 
-namespace Telhai.CS.Demos.Models
+namespace Telhai.CS.ServerAPI.Repositories
 {
     public interface IStudentsRepository
     {
