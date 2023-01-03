@@ -83,5 +83,34 @@ namespace Telhai.CS.Demos
             LinqDemosWindow linqDemosWindow = new LinqDemosWindow();
             linqDemosWindow.ShowDialog();
         }
+
+        private void btnBindingDemo_Click(object sender, RoutedEventArgs e)
+        {
+
+            BindingDemo d = new BindingDemo();
+            d.Show();
+           // User user = new User();
+            //01-Register Event
+         //   user.PropertyChanged += User_PropertyChanged;
+           // user.PropertyChanged += CallMe;
+         //   user.Name = "XXXXX";
+
+        }
+
+        private void User_PropertyChanged(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+
+            //User? s = sender as User;
+           ///// if (s != null)
+           // {
+
+          //  }
+            listElem.Items.Add(e.PropertyName);
+        }
+        private void CallMe(object? sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            listElem.Items.Add(e.PropertyName);
+
+        }
     }
 }

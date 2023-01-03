@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="LinqDemosWindow" Height="450" Width="800">
     <Canvas Margin="0,-1,0,1">
-        <Button  Name="Demo1" Content="Demo1" Canvas.Left="134" Canvas.Top="82" Height="51" Width="111"  HorizontalAlignment="Center" VerticalAlignment="Top" Click="Demo1_Click"/>
-        <Button  Name="Demo2"  Content="Demo2"   Canvas.Left="134" Canvas.Top="140" Height="51" Width="111" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Demo2_Click" />
-        <TextBox Name="ResultTxtBox" VerticalScrollBarVisibility="Visible"  Canvas.Left="250" TextWrapping="Wrap" Text="" Canvas.Top="82" Width="443" Height="305"/>
-      
+        <Button  Name="Demo1" Content="Demo1" Canvas.Left="25" Canvas.Top="82" Height="51" Width="112"  HorizontalAlignment="Left" VerticalAlignment="Top" Click="Demo1_Click"/>
+        <Button  Name="Demo2"  Content="Demo2"   Canvas.Left="26" Canvas.Top="140" Height="51" Width="111" HorizontalAlignment="Center" VerticalAlignment="Top" Click="Demo2_Click" />
+        <TextBox Name="ResultTxtBox" VerticalScrollBarVisibility="Visible"  Canvas.Left="156" TextWrapping="Wrap" Text="" Canvas.Top="82" Width="617" Height="305" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
     </Canvas>
 </Window>
 

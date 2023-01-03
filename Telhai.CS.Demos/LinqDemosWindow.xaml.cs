@@ -31,6 +31,12 @@ namespace Telhai.CS.Demos
             return n < 5;
         }
 
+
+        /// <summary>
+        /// Simple Whre Select
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Demo1_Click(object sender, RoutedEventArgs e)
         {
             //int[] numbers = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0, 10 };
@@ -67,18 +73,42 @@ namespace Telhai.CS.Demos
 
         }
 
+        /// <summary>
+        /// Working With Objects
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Demo2_Click(object sender, RoutedEventArgs e)
         {
-            //--Working On Objects
-            //--Project Result with anonymous multiuValues
+
             List<Product> productsSource = Products.ProductList;
             var productsQuery = from p in productsSource
                                 where p.UnitsInStock > 0 && p.UnitPrice > 3
                                 select new { ProductCat = p.Category + "_" + p.ProductName, KUKU = p.ProductID };
             foreach (var itemQuery in productsQuery)
             {
-                this.ResultTxtBox.Text += itemQuery.ProductCat+"\n";
+                this.ResultTxtBox.Text += itemQuery.ProductCat + "\n";
             }
+            this.ResultTxtBox.Text += "\n--------------------\n";
+
+           var orderGroups = from p in productsSource
+                              group p by p.Category into g
+                              select (Category: g.Key, Products: g); //This is not Anonymous class its Tupple
+
+            foreach (var orderGroup in orderGroups)
+            {
+                this.ResultTxtBox.Text += $"\nProducts in {orderGroup.Category} category:";
+                foreach (var product in orderGroup.Products)
+                {
+                    this.ResultTxtBox.Text += $"{product.ProductName}-({product.UnitPrice}) {product.Category} \n";
+                }
+            }
+
+
+
+
+
+
 
         }
     }
