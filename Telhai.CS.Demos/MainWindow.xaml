@@ -15,14 +15,15 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
-        <Label  Grid.Column="0" Background="LightBlue" Content="Test Operations" FontSize="35"  VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="8,0,0,0" HorizontalAlignment="Stretch"/>
-        <StackPanel Grid.Row="1" Background="LightSkyBlue"  >
+        <Label  Grid.Column="0" Background="LightBlue" Content="Test Operations" FontSize="35"  VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="0,0,0,0" HorizontalAlignment="Stretch"/>
+        <StackPanel Name="stackPanelBtns" Grid.Row="1" Background="LightSkyBlue"  >
            
             <Button Name="btn1" Margin="8,4,8,8" Content="Calc Window"  FontSize="25" Click="btn1_Click"   />
             <Button Name="btn2" Margin="8,0,8,8" Content="Students Window" FontSize="25" Click="btn2_Click"  />
             <Button Name="btn3" Margin="8,0,8,8" Content="JsonDemos Window" FontSize="25" Click="btn3_Click"  />
             <Button Name="btn4" Margin="8,0,8,8" Content="Linq Demos" FontSize="25" Click="Linq_Click"   />
-            <Button Name="btnBindingDemo" Margin="8,0,8,8" Content="Binding" FontSize="25" Click="btnBindingDemo_Click"   />
+            <Button Name="EventsDemo" Margin="8,0,8,8" Content="Event Color Demo" FontSize="25" Click="EventsDemo_Click"  />
+            <Button Name="btnBindingDemo" Margin="8,0,8,8" Content="Binding Collection" FontSize="25" Click="btnBindingDemo_Click"   />
         </StackPanel>
         <ListBox  SelectionChanged="listElem_SelectionChanged" FontSize="20" Name="listElem" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="15" />
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Telhai.CS.ServerAPI.Models
+namespace Telhai.CS.Demos.Models
 {
     public class Student
     {
