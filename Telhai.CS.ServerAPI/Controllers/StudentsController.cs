@@ -15,11 +15,13 @@ namespace Telhai.CS.ServerAPI.Controllers
         public StudentsController()
         {
             repo = StudentsRepository.Instance;
-            Student s1 = new Student("DolandDuck", 60);
-            Student s2 = new Student("MickyMouse", 30);
-            repo.AddStudent(s1);
-            repo.AddStudent(s2);
-
+            if (repo.Students.Length == 0)
+            {
+                Student s1 = new Student("DolandDuck", 60);
+                Student s2 = new Student("MickyMouse", 30);
+                repo.AddStudent(s1);
+                repo.AddStudent(s2);
+            }
         }
 
         // GET: api/<StudentsController>
