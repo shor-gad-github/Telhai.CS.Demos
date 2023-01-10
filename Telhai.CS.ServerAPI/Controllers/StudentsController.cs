@@ -58,14 +58,43 @@ namespace Telhai.CS.ServerAPI.Controllers
 
         // PUT api/<StudentsController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(string id, [FromBody] Student studentUpdate)
         {
+            Student? student = this.repo.Students.Where(s => s.Id == id).SingleOrDefault();
+            if (student != null)
+            {
+                repo.UpdateStudent(studentUpdate);
+            }
+
+         
+               
+
+        }
+
+        // PUT api/<StudentsController>/5
+        [HttpPut]
+        public void Put([FromBody] Student studentUpdate)
+        {
+            Student? student = this.repo.Students.Where(s => s.Id == studentUpdate.Id).SingleOrDefault();
+            if (student != null)
+            {
+                repo.UpdateStudent(studentUpdate);
+            }
+
+
+
+
         }
 
         // DELETE api/<StudentsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(string id)
         {
+            Student? student = this.repo.Students.Where(s => s.Id == id).SingleOrDefault();
+            if (student != null)
+            {
+                repo.RemoveStudent(id);
+            }
         }
     }
 }
