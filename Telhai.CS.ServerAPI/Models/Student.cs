@@ -31,9 +31,11 @@ namespace Telhai.CS.ServerAPI.Models
         }
 
 
-        public Student():this("",-1)
+        public Student()
         {
-
+            this.age = 0;
+            this.Name = string.Empty;
+            this.Id = string.Empty;
         }
 
         public Student(string name,int age)

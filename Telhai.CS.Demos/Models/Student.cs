@@ -41,6 +41,7 @@ namespace Telhai.CS.Demos.Models
            
             this.Name = name;
             this.Age = age;
+
             this.Id = Guid.NewGuid().ToString();
         }
 

@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Telhai.CS.Demos.Models
@@ -10,12 +13,16 @@ namespace Telhai.CS.Demos.Models
     {
         private List<Student> _students;
         //02 Static Member private
+        HttpClient clientApi; 
+
         static private StudentsRepository _instance = null;
 
         //01 change to private
         private StudentsRepository()
         {
             _students = new List<Student>();
+            clientApi = new HttpClient();
+            clientApi.BaseAddress = new Uri("https://localhost:7070");
         }
 
         //03 Get Factory Of StudentsRepository  as singelton
@@ -33,11 +40,24 @@ namespace Telhai.CS.Demos.Models
         }
 
 
+        public List<Student>  GetStudents()
+        {
+            var response = clientApi?.GetAsync("api/students").Result;
+          //  response.EnsureSuccessStatusCode();
+            string? dataString =  response?.Content.ReadAsStringAsync().Result;
+           var students = JsonSerializer.Deserialize<List<Student>>(dataString);
+            return students;
+        }
+
 
 
         public Student[] Students
         {
-            get { return _students.ToArray(); }
+            get {
+                 var st =  GetStudents();
+
+
+                return st.ToArray(); }
 
         }
 

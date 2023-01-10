@@ -44,8 +44,16 @@ namespace Telhai.CS.ServerAPI.Controllers
 
         // POST api/<StudentsController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Student newStudent)
         {
+
+            if (newStudent.Id == "")
+            {
+                newStudent.Id = Guid.NewGuid().ToString();
+                repo.AddStudent(newStudent);
+            }
+
+
         }
 
         // PUT api/<StudentsController>/5
