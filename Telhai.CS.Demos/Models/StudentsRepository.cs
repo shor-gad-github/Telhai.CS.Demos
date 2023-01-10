@@ -12,17 +12,14 @@ namespace Telhai.CS.Demos.Models
     public class StudentsRepository : IStudentsRepository
     {
         private List<Student> _students;
-        //02 Static Member private
-        HttpClient clientApi; 
-
+       
         static private StudentsRepository _instance = null;
 
         //01 change to private
         private StudentsRepository()
         {
-            _students = new List<Student>();
-            clientApi = new HttpClient();
-            clientApi.BaseAddress = new Uri("https://localhost:7070");
+            this._students = new List<Student>();          
+          
         }
 
         //03 Get Factory Of StudentsRepository  as singelton
@@ -40,26 +37,13 @@ namespace Telhai.CS.Demos.Models
         }
 
 
-        public List<Student>  GetStudents()
+        public List<Student>  GetAllStudents()
         {
-            var response = clientApi?.GetAsync("api/students").Result;
-          //  response.EnsureSuccessStatusCode();
-            string? dataString =  response?.Content.ReadAsStringAsync().Result;
-           var students = JsonSerializer.Deserialize<List<Student>>(dataString);
-            return students;
+            return this._students;
         }
 
 
 
-        public Student[] Students
-        {
-            get {
-                 var st =  GetStudents();
-
-
-                return st.ToArray(); }
-
-        }
 
         public void AddStudent(Student student)
         {

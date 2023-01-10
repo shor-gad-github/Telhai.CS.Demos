@@ -12,9 +12,10 @@ namespace Telhai.CS.ServerAPI.Controllers
     {
         private IStudentsRepository repo;
 
-        public StudentsController()
+        public StudentsController(IStudentsRepository repo)
         {
-            repo = StudentsRepository.Instance;
+            this.repo = repo;
+            //repo = StudentsRepository.Instance;
             if (repo.Students.Length == 0)
             {
                 Student s1 = new Student("DolandDuck", 60);

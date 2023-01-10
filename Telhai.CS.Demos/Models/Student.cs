@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Telhai.CS.Demos.Models
 {
     public class Student
     {
+        [JsonPropertyName("name")]
         public string Name { get; set; }
+        [JsonPropertyName("id")]
         public string Id { get; set; }
         //public int Age { get ; set; }
         private int age =-1;
+        [JsonPropertyName("age")]
         public int Age
         {
             get { return age; }
@@ -27,7 +31,7 @@ namespace Telhai.CS.Demos.Models
        
         public override string ToString()
         {
-            return  this.Name ;
+            return  this.Id +"-"+this.Name  ;
         }
 
 
@@ -45,7 +49,7 @@ namespace Telhai.CS.Demos.Models
             this.Id = Guid.NewGuid().ToString();
         }
 
-
+       
 
     }
 }

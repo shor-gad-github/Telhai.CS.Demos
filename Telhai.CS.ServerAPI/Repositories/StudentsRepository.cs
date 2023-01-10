@@ -11,27 +11,27 @@ namespace Telhai.CS.ServerAPI.Repositories
     {
         private List<Student> _students;
         //02 Static Member private
-        static private StudentsRepository _instance = null;
+       // static private StudentsRepository _instance = null;
 
         //01 change to private
-        private StudentsRepository()
+        public StudentsRepository()
         {
             _students = new List<Student>();
         }
 
         //03 Get Factory Of StudentsRepository  as singelton
-        public static StudentsRepository Instance
-        {
-            get
-            { 
-              if (_instance == null)
-                {
-                    _instance = new StudentsRepository();
+       //public static StudentsRepository Instance
+       //{
+       //    get
+       //     { 
+       //       if (_instance == null)
+       //         {
+       //             _instance = new StudentsRepository();
 
-                }
-                return _instance;
-            }
-        }
+       //         }
+       //         return _instance;
+       //     }
+       // }
 
 
 

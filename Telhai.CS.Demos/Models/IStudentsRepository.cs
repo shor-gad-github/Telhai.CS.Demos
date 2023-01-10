@@ -12,7 +12,7 @@ namespace Telhai.CS.Demos.Models
         void AddStudent(Student student);
         void UpdateStudent(Student student);
         void RemoveStudent(string id);
-        Student[] Students { get;  }
+        List<Student> GetAllStudents();
 
     }
 }

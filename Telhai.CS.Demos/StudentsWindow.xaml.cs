@@ -34,7 +34,7 @@ namespace Telhai.CS.Demos
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            this.listBoxStudents.ItemsSource = repo.Students;
+            this.listBoxStudents.ItemsSource = repo.GetAllStudents();
          
 
         }
@@ -57,7 +57,7 @@ namespace Telhai.CS.Demos
             this.repo.AddStudent(s);
             iNoName++;
          
-            this.listBoxStudents.ItemsSource = this.repo.Students;
+            this.listBoxStudents.ItemsSource = this.repo.GetAllStudents();
             //SetSelectedByIndex(this.listBoxStudents.Items.Count-1);
             SetSelectedById(s.Id);
         }
@@ -92,7 +92,7 @@ namespace Telhai.CS.Demos
                 repo.RemoveStudent(s.Id);
             }
                 
-            this.listBoxStudents.ItemsSource = repo.Students;
+            this.listBoxStudents.ItemsSource = repo.GetAllStudents();
             SetSelectedByIndex(0);
         }
 
@@ -110,14 +110,14 @@ namespace Telhai.CS.Demos
                 s.Id = this.txtId.Text;
 
                 this.repo.UpdateStudent(s);
-                this.listBoxStudents.ItemsSource = repo.Students;
+                this.listBoxStudents.ItemsSource = repo.GetAllStudents();
                 this.SetSelectedById(s.Id);
             }
         }
 
         private void btnSaveAll_Click(object sender, RoutedEventArgs e)
         {
-            List<Student> students = repo.Students.ToList(); ;
+            List<Student> students = repo.GetAllStudents();
 
             var options = new JsonSerializerOptions { WriteIndented = true };
             string jsonStudentsString = JsonSerializer.Serialize<List<Student>>(students, options);
@@ -161,7 +161,7 @@ namespace Telhai.CS.Demos
                     repo.AddStudent(item);
                 }
                 //3)Sync GUI LIST
-                this.listBoxStudents.ItemsSource = repo.Students;
+                this.listBoxStudents.ItemsSource = repo.GetAllStudents(); ;
 
 
 
