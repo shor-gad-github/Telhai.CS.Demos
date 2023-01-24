@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Telhai.CS.ServerAPI.Models;
+using Telhai.CS.ServerAPI.ModelsDb;
 using Telhai.CS.ServerAPI.Repositories;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -27,9 +28,11 @@ namespace Telhai.CS.ServerAPI.Controllers
 
         // GET: api/<StudentsController>
         [HttpGet]
-        public IEnumerable<Student> Get()
+        public Student[] Get()
         {
             return this.repo.Students;
+          
+            
         }
 
         // GET api/<StudentsController>/5
@@ -45,16 +48,17 @@ namespace Telhai.CS.ServerAPI.Controllers
 
         // POST api/<StudentsController>
         [HttpPost]
-        public void Post(Student newStudent)
+        public string Post(Student newStudent)
         {
-
+            string id = "";
             if (newStudent.Id == "")
             {
                 newStudent.Id = Guid.NewGuid().ToString();
                 repo.AddStudent(newStudent);
+                id = newStudent.Id;
             }
 
-
+            return id;
         }
 
         // PUT api/<StudentsController>/5
