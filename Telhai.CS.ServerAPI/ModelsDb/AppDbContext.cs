@@ -10,7 +10,7 @@ namespace Telhai.CS.ServerAPI.ModelsDb
              
         }
 
-        protectd override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
             // optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectModels; AttachDbFilename='D:\Courses\.Net_Core_C#\01_.NetCore_Overview\ClassWork\Telhai.CS.Demos\DB\DbTesting.mdf'");
