@@ -10,10 +10,10 @@ namespace Telhai.CS.ServerAPI.ModelsDb
              
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protectd override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=Test");
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectModels; AttachDbFilename='D:\Courses\.Net_Core_C#\01_.NetCore_Overview\ClassWork\Telhai.CS.Demos\DB\DbTesting.mdf'");
+            // optionsBuilder.UseSqlServer(@"Data Source=(localdb)\ProjectModels; AttachDbFilename='D:\Courses\.Net_Core_C#\01_.NetCore_Overview\ClassWork\Telhai.CS.Demos\DB\DbTesting.mdf'");
        
         
         }
@@ -23,7 +23,7 @@ namespace Telhai.CS.ServerAPI.ModelsDb
            
         }
         //entities
-        public DbSet<Log> Logs { get; set; }
+        // public DbSet<Log> Logs { get; set; }
 
 
 
